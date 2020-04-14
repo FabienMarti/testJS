@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+        <title>Test</title>
+
+
+
+        <script>
+            // show the given page, hide the rest
+            function show(elementID) {
+                // try to find the requested page and alert if it's not found
+                var ele = document.getElementById(elementID);
+                if (!ele) {
+                    alert("no such element");
+                    return;
+                }
+
+                // get all pages, loop through them and hide them
+                var pages = document.getElementsByClassName('page');
+                for (var i = 0; i < pages.length; i++) {
+                    pages[i].style.display = 'none';
+                }
+
+                // then show the requested page
+                ele.style.display = 'block';
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3 border bg-info" onclick="show('Page1');">1</div>
+                <div class="col-3 border bg-info" onclick="show('Page2');">2</div>
+                <div class="col-3 border bg-info" onclick="show('Page3');">3</div>
+                <div class="col-3 border bg-info" onclick="show('Page4');">4</div>
+            </div>
+        </div>
+
+        <div id="Page1" class="page">
+            <img src="assets/img/Dino1.jpg" />
+        </div>
+        <div id="Page2" class="page" style="display:none">
+            <img src="assets/img/Dino2.jpg" />
+        </div>
+        <div id="Page3" class="page" style="display:none">
+            <img src="assets/img/Dino3.jpg" />
+        </div>
+        <div id="Page4" class="page" style="display:none">
+            <img src="assets/img/Tyrannosaure.jpg" />
+        </div>
+
+    </body>
+
+</html>
